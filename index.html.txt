@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>EdFisica - Relajacion</title>
+</head>
+<body>
+  <h1>Exposición: Educación Física y Relajación</h1>
+  <p>Proyecto subido correctamente.</p>
+</body>
+</html>
