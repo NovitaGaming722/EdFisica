@@ -1,0 +1,15 @@
+
+390x844 — puntos con defectos por sección (reposo / fijada / transición):
+  portada         0   0   0  de 2
+  concepto        0   0   0  de 2
+  diferencias     0   0   0  de 2
+  historia        0   0   0  de 9
+  fisiologia      0   0   0  de 3
+  cuerpomente     0   0   0  de 3
+  tecnicas        0   0   0  de 3
+  respiracion     0   0   0  de 2
+  ambitos         0   0   0  de 2
+  quiz            0   0   0  de 2
+  cierre          0   0   0  de 2
+  (página)        0   0   0  de 1
+Consola: [ 'warning: Service Worker registration blocked by Playwright' ]

@@ -1,0 +1,80 @@
+== antes 1920x1080
+  portada         0   1   0  de  23   {"control":1}
+  concepto        0   0   1  de  29   {}
+  diferencias     3  12   5  de  29   {"arbol":40}
+  historia        7  35  10  de  54   {"borde":239,"control":167,"arbol":89,"texto-texto":2}
+  fisiologia      8  13   4  de  33   {"control":62,"arbol":39}
+  cuerpomente     1   6   6  de  26   {"arbol":11}
+  tecnicas        0   0   5  de  35   {}
+  respiracion     0   0   4  de  26   {}
+  ambitos         0   0   3  de  28   {}
+  quiz            0   0   3  de  37   {}
+  cierre          1  12  11  de  25   {"arbol":38}
+  TOTAL          20  79  52  de 345
+== despues-v3 1920x1080
+  portada         0   0   0  de  23   {}
+  concepto        0   0   1  de  29   {}
+  diferencias     0   0   4  de  29   {}
+  historia        0   0   9  de  54   {}
+  fisiologia      0   0   4  de  33   {}
+  cuerpomente     0   0   5  de  26   {}
+  tecnicas        0   0   5  de  35   {}
+  respiracion     0   0   4  de  26   {}
+  ambitos         0   0   3  de  28   {}
+  quiz            0   0   3  de  37   {}
+  cierre          0   0   5  de  25   {}
+  TOTAL           0   0  43  de 345
+== antes 1280x720
+  portada         0   1   0  de  23   {"control":1}
+  concepto        0   0   1  de  29   {}
+  diferencias     3  12   5  de  29   {"arbol":42}
+  historia        7  35  10  de  54   {"borde":240,"control":160,"arbol":86,"texto-texto":1}
+  fisiologia      8  13   4  de  33   {"control":62,"arbol":50}
+  cuerpomente     1   2   6  de  26   {"arbol":3}
+  tecnicas        1   0   4  de  35   {"borde":1}
+  respiracion     0   0   4  de  26   {}
+  ambitos         0   0   4  de  28   {}
+  quiz            0   0   3  de  37   {}
+  cierre          1  12  11  de  25   {"arbol":40}
+  TOTAL          21  75  52  de 345
+== despues-v3 1280x720
+  portada         0   0   0  de  23   {}
+  concepto        0   0   1  de  29   {}
+  diferencias     0   0   4  de  29   {}
+  historia        0   0   9  de  54   {}
+  fisiologia      0   0   4  de  33   {}
+  cuerpomente     0   0   5  de  26   {}
+  tecnicas        0   0   4  de  35   {}
+  respiracion     0   0   3  de  26   {}
+  ambitos         0   0   4  de  28   {}
+  quiz            0   0   3  de  37   {}
+  cierre          0   0   5  de  25   {}
+  TOTAL           0   0  42  de 345
+== antes 390x844
+  portada         0   0   0  de   2   {}
+  concepto        0   0   0  de   2   {}
+  diferencias     0   0   0  de   2   {}
+  historia        9   0   0  de   9   {"borde":58}
+  fisiologia      0   0   0  de   3   {}
+  cuerpomente     0   0   0  de   3   {}
+  tecnicas        0   0   0  de   3   {}
+  respiracion     0   0   0  de   2   {}
+  ambitos         0   0   0  de   2   {}
+  quiz            0   0   0  de   2   {}
+  cierre          0   0   0  de   2   {}
+  (página)        0   0   0  de   1   {}
+  TOTAL           9   0   0  de  33
+== despues-v3 390x844
+  portada         0   0   0  de   2   {}
+  concepto        0   0   0  de   2   {}
+  diferencias     0   0   0  de   2   {}
+  historia        0   0   0  de   9   {}
+  fisiologia      0   0   0  de   3   {}
+  cuerpomente     0   0   0  de   3   {}
+  tecnicas        0   0   0  de   3   {}
+  respiracion     0   0   0  de   2   {}
+  ambitos         0   0   0  de   2   {}
+  quiz            0   0   0  de   2   {}
+  cierre          0   0   0  de   2   {}
+  (página)        0   0   0  de   1   {}
+  TOTAL           0   0   0  de  33

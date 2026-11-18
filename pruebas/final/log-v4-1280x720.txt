@@ -1,0 +1,15 @@
+...........................................................................................................................................................................................................................................page.screenshot: Protocol error (Page.captureScreenshot): Unable to capture screenshot
+Call log:
+  - taking page screenshot
+  - waiting for fonts to load...
+  - fonts loaded
+
+    at sample (/Volumes/SSD M.2/Programación/EdFisica-Relajacion/pruebas/solapes.js:183:30)
+    at async /Volumes/SSD M.2/Programación/EdFisica-Relajacion/pruebas/solapes.js:209:9 {
+  log: [
+    '  - taking page screenshot',
+    '  - waiting for fonts to load...',
+    '  - fonts loaded'
+  ],
+  name: 'Error'
+}

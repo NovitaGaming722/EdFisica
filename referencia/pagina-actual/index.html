@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Relajación — El árbol de la calma</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,440;0,9..144,600;1,9..144,420&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="scene" id="scene">
+
+  <div class="bg-vignette" aria-hidden="true"></div>
+  <div class="ambient-glow" id="glow" aria-hidden="true"></div>
+  <div class="particles" id="particles" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">֍</span>
+      <span class="brand-name">La&nbsp;Relajación</span>
+    </div>
+    <nav class="topnav" id="topnav">
+      <button class="nav-link" data-branch="concepto">Concepto</button>
+      <button class="nav-link" data-branch="fisiologia">Fisiología</button>
+      <button class="nav-link" data-branch="historia">Historia</button>
+      <button class="nav-link" data-branch="cuerpomente">Cuerpo&nbsp;y&nbsp;mente</button>
+      <button class="nav-link" data-branch="tecnicas">Técnicas</button>
+      <button class="nav-link" data-branch="ambitos">Ámbitos</button>
+    </nav>
+  </header>
+
+  <main class="stage">
+
+    <div class="hero-copy" id="heroCopy">
+      <p class="eyebrow">Un estado, no una ausencia</p>
+      <h1 class="hero-title">La&nbsp;relajación</h1>
+      <p class="hero-sub">Toca una raíz, el tronco o una rama para recorrer el árbol — de sus fundamentos a lo que hace florecer.</p>
+    </div>
+
+    <div class="tree-column">
+      <div class="tree-wrap" id="treeWrap">
+
+        <svg id="treeSvg" viewBox="0 0 900 1000" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustración de un árbol cuyas raíces, tronco y ramas representan las secciones de la presentación">
+          <defs>
+            <radialGradient id="shadowGrad" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#000000" stop-opacity="0.55"/>
+              <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+            </radialGradient>
+            <linearGradient id="barkGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#5c4030"/>
+              <stop offset="45%" stop-color="#7a5a41"/>
+              <stop offset="55%" stop-color="#6b4c37"/>
+              <stop offset="100%" stop-color="#432d21"/>
+            </linearGradient>
+            <radialGradient id="canopyGrad" cx="50%" cy="35%" r="65%">
+              <stop offset="0%" stop-color="#4f7a52"/>
+              <stop offset="100%" stop-color="#1f3524"/>
+            </radialGradient>
+            <filter id="blurSoft" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="10"/>
+            </filter>
+            <filter id="blurStrong" x="-60%" y="-60%" width="220%" height="220%">
+              <feGaussianBlur stdDeviation="26"/>
+            </filter>
+            <filter id="glowFilter" x="-80%" y="-80%" width="260%" height="260%">
+              <feGaussianBlur stdDeviation="9" result="blur"/>
+              <feMerge>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+          </defs>
+
+          <!-- ground shadow -->
+          <ellipse class="ground-shadow" cx="450" cy="948" rx="235" ry="17" fill="url(#shadowGrad)"/>
+
+          <!-- soft canopy backdrop, purely atmospheric -->
+          <g class="canopy-backdrop" id="canopyBackdrop">
+            <ellipse cx="450" cy="410" rx="330" ry="235" fill="url(#canopyGrad)" opacity="0.32" filter="url(#blurStrong)"/>
+          </g>
+
+          <!-- roots : node "concepto" -->
+          <g class="node-group" id="node-concepto" data-branch="concepto">
+            <g class="roots" id="roots">
+              <path class="draw-path root-path" d="M445 935 C 410 950 360 960 300 972" />
+              <path class="draw-path root-path" d="M452 941 C 430 956 410 971 395 986" />
+              <path class="draw-path root-path" d="M456 943 C 456 959 452 973 448 986" />
+              <path class="draw-path root-path" d="M462 941 C 480 959 495 973 505 989" />
+              <path class="draw-path root-path" d="M470 935 C 505 950 555 960 610 971" />
+            </g>
+          </g>
+
+          <!-- trunk : node "fisiologia" -->
+          <g class="node-group" id="node-fisiologia" data-branch="fisiologia">
+            <path class="draw-fill trunk-shape" fill="url(#barkGrad)" d="M420 940 C412 860 408 780 415 700 C419 655 424 615 430 572 L470 572 C476 615 481 655 485 700 C492 780 488 860 480 940 Z"/>
+            <path class="bark-line" d="M438 900 C 434 800 436 700 442 600" />
+            <path class="bark-line" d="M462 900 C 466 800 464 700 458 600" />
+          </g>
+
+          <!-- central crown tuft, purely decorative -->
+          <g class="leaf-cluster crown-core" id="crownCore">
+            <circle cx="450" cy="562" r="66" fill="#3c5f42"/>
+            <circle cx="404" cy="542" r="48" fill="#557f56"/>
+            <circle cx="496" cy="542" r="48" fill="#6f9a63"/>
+          </g>
+
+          <!-- branch: historia (upper-left) -->
+          <g class="node-group branch" id="node-historia" data-branch="historia">
+            <path class="draw-fill branch-shape" fill="url(#barkGrad)" d="M424 606 C370 560 300 500 260 440 C230 396 210 340 198 288 L222 282 C236 332 258 384 288 428 C328 486 386 542 448 588 Z"/>
+            <g class="leaf-cluster" transform="translate(0,0)">
+              <circle cx="150" cy="290" r="40" fill="#345a3a"/>
+              <circle cx="225" cy="240" r="60" fill="#4f7a52"/>
+              <circle cx="175" cy="252" r="52" fill="#6f9a63"/>
+              <circle cx="195" cy="205" r="42" fill="#8bb478"/>
+              <circle cx="245" cy="292" r="34" fill="#2d4d33"/>
+            </g>
+          </g>
+
+          <!-- branch: cuerpomente (upper-right) -->
+          <g class="node-group branch" id="node-cuerpomente" data-branch="cuerpomente">
+            <path class="draw-fill branch-shape" fill="url(#barkGrad)" d="M476 606 C530 560 600 500 640 440 C670 396 690 340 702 288 L678 282 C664 332 642 384 612 428 C572 486 514 542 452 588 Z"/>
+            <g class="leaf-cluster">
+              <circle cx="750" cy="290" r="40" fill="#345a3a"/>
+              <circle cx="675" cy="240" r="60" fill="#4f7a52"/>
+              <circle cx="725" cy="252" r="52" fill="#6f9a63"/>
+              <circle cx="705" cy="205" r="42" fill="#8bb478"/>
+              <circle cx="655" cy="292" r="34" fill="#2d4d33"/>
+            </g>
+          </g>
+
+          <!-- branch: tecnicas (lower-left) -->
+          <g class="node-group branch" id="node-tecnicas" data-branch="tecnicas">
+            <path class="draw-fill branch-shape" fill="url(#barkGrad)" d="M414 668 C340 660 260 640 190 610 C150 592 120 560 100 525 L128 512 C148 546 176 574 212 592 C274 622 344 640 424 646 Z"/>
+            <g class="leaf-cluster">
+              <circle cx="70" cy="500" r="36" fill="#345a3a"/>
+              <circle cx="145" cy="455" r="62" fill="#4f7a52"/>
+              <circle cx="100" cy="472" r="52" fill="#6f9a63"/>
+              <circle cx="118" cy="422" r="40" fill="#8bb478"/>
+              <circle cx="163" cy="507" r="32" fill="#2d4d33"/>
+            </g>
+          </g>
+
+          <!-- branch: ambitos (lower-right) -->
+          <g class="node-group branch" id="node-ambitos" data-branch="ambitos">
+            <path class="draw-fill branch-shape" fill="url(#barkGrad)" d="M486 668 C560 660 640 640 710 610 C750 592 780 560 800 525 L772 512 C752 546 724 574 688 592 C626 622 556 640 476 646 Z"/>
+            <g class="leaf-cluster">
+              <circle cx="830" cy="500" r="36" fill="#345a3a"/>
+              <circle cx="755" cy="455" r="62" fill="#4f7a52"/>
+              <circle cx="800" cy="472" r="52" fill="#6f9a63"/>
+              <circle cx="782" cy="422" r="40" fill="#8bb478"/>
+              <circle cx="737" cy="507" r="32" fill="#2d4d33"/>
+            </g>
+          </g>
+
+        </svg>
+
+        <!-- HTML overlay hit-targets, positioned to match the svg coordinates above -->
+        <button class="node-btn" data-branch="concepto" style="--x:50%; --y:96.5%;">
+          <span class="node-dot"></span><span class="node-label">Concepto</span>
+        </button>
+        <button class="node-btn" data-branch="fisiologia" style="--x:50%; --y:76%;">
+          <span class="node-dot"></span><span class="node-label">Fisiología</span>
+        </button>
+        <button class="node-btn" data-branch="historia" style="--x:21%; --y:26%;">
+          <span class="node-dot"></span><span class="node-label">Historia</span>
+        </button>
+        <button class="node-btn" data-branch="cuerpomente" style="--x:79%; --y:26%;">
+          <span class="node-dot"></span><span class="node-label">Cuerpo y mente</span>
+        </button>
+        <button class="node-btn" data-branch="tecnicas" style="--x:11%; --y:47.5%;">
+          <span class="node-dot"></span><span class="node-label">Técnicas</span>
+        </button>
+        <button class="node-btn" data-branch="ambitos" style="--x:89%; --y:47.5%;">
+          <span class="node-dot"></span><span class="node-label">Ámbitos</span>
+        </button>
+
+      </div>
+
+      <p class="breath-cue" id="breathCue">inhala</p>
+    </div>
+
+    <section class="panel" id="panel" aria-live="polite">
+      <div class="panel-inner" id="panelInner"></div>
+      <div class="panel-controls">
+        <button id="prevBtn" class="ctrl-btn" aria-label="Rama anterior">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8L10 13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="progress-dots" id="progressDots"></div>
+        <button id="nextBtn" class="ctrl-btn" aria-label="Rama siguiente">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="credits">Grupo: Daniel Urrego &amp; Juan Rengifo</footer>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

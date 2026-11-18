@@ -1,0 +1,4 @@
+......................................................
+1920x1080 — puntos con defectos por sección (reposo / fijada / transición):
+  historia        0   0   9  de 54
+Consola: [ 'warning: Service Worker registration blocked by Playwright' ]

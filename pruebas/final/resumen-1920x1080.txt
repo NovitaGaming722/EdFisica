@@ -1,0 +1,2 @@
+tecnicas | borde | button.thought «¿Y si sale mal?» ↔ der(#mi-f.mind-field) Npx 
+       reposo:paso 6/9 

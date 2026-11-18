@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="es" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>La relajación — Exposición interactiva de Educación Física</title>
+<meta name="description" content="Exposición interactiva sobre la relajación: concepto, historia, fisiología, cuerpo y mente, técnicas, respiración guiada y ámbitos. Grupo: Daniel Urrego y Juan Rengifo.">
+<meta name="theme-color" content="#07110e">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/slides.css">
+<link rel="stylesheet" href="css/compose.css">
+<script>
+/* Modo antes del primer pintado: «pins» = secciones fijadas con scroll dinámico (escritorio);
+   «nopin» = flujo normal (móvil o prefers-reduced-motion). */
+(function () {
+  var rm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var wide = window.matchMedia('(min-width: 901px)').matches;
+  document.documentElement.className = 'js ' + (rm ? 'reduced nopin' : wide ? 'pins' : 'nopin');
+})();
+</script>
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+
+<!-- Fondo y escena 3D (decorativos) -->
+<div class="bg" aria-hidden="true"><div class="bg-calm"></div><div class="bg-tense"></div><div class="bg-glow g1" id="glow-1"></div><div class="bg-glow g2" id="glow-2"></div><div class="bg-grain"></div></div>
+<canvas id="scene" aria-hidden="true"></canvas>
+
+<!-- Marco: marca, crédito, progreso y controles -->
+<header class="chrome chrome-top">
+  <a class="brand" href="#portada" data-go="0"><span class="brand-mark" aria-hidden="true"></span>La relajación</a>
+  <p class="credit">Daniel Urrego <span aria-hidden="true">·</span> Juan Rengifo</p>
+</header>
+
+<nav class="rail" id="rail" aria-label="Secciones de la exposición"></nav>
+
+<div class="chrome chrome-bottom">
+  <p class="status" aria-live="polite"><b id="st-num">01</b><span class="st-sep"> / </span><span id="st-total">10</span><span class="st-name" id="st-name">Portada</span></p>
+  <div class="ctrls">
+    <button class="ibtn" id="b-prev" aria-label="Anterior (←)" title="Anterior (←)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <button class="ibtn" id="b-next" aria-label="Siguiente (→ o Espacio)" title="Siguiente (→ o Espacio)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+    <button class="ibtn" id="b-menu" aria-label="Índice (M)" title="Índice (M)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg></button>
+    <button class="ibtn" id="b-fs" aria-label="Pantalla completa (F)" title="Pantalla completa (F)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
+    <button class="ibtn" id="b-help" aria-label="Ayuda y atajos (?)" title="Ayuda y atajos (?)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 9a2.5 2.5 0 115 0c0 1.8-2.5 2-2.5 4M12 17.2v.1"/></svg></button>
+  </div>
+</div>
+<div class="progress" aria-hidden="true"><i id="progress-fill"></i></div>
+
+<main id="contenido">
+
+<!-- 00 · PORTADA — izquierda; el árbol a la derecha y, al bajar, se centra y crece -->
+<section class="slide pin s-portada" id="portada" data-title="Portada" data-pin="1.4" data-stop="0">
+  <div class="stage">
+    <div class="wrap" data-fx="y:0>-3vh s:1>1.06 @.2,1.25 | o:1>0 @.2,.8">
+      <p class="eyebrow reveal">Educación Física <span class="dot" aria-hidden="true"></span> Exposición</p>
+      <h1 class="mega"><span class="ln"><span>La</span></span><span class="ln"><span><em>relajación</em></span></span></h1>
+      <p class="lede reveal" style="--d:.55s">Baja tensión. Proceso activo.</p>
+      <div class="by reveal" style="--d:.75s"><span class="by-l">Grupo</span><b>Daniel Urrego</b><b>Juan Rengifo</b></div>
+      <p class="cue reveal" style="--d:.95s"><span class="cue-dot" aria-hidden="true"></span><span class="cue-word" id="breath-cue">inhala</span><span class="cue-txt">Sigue la hoja <span class="only-d"><kbd>→</kbd></span><span class="only-m">↓</span></span></p>
+    </div>
+  </div>
+</section>
+
+<!-- 01 · CONCEPTO — izquierda; las palabras se encienden con el scroll y el enunciado cede sitio al resto -->
+<section class="slide pin s-concepto" id="concepto" data-title="Concepto" data-pin="2.3" data-stop="2.0">
+  <div class="stage">
+    <span class="numeral" aria-hidden="true" data-par="x:.1 y:-.28">01</span>
+    <div class="wrap" data-fx="shrink @e-.2,e+.8">
+      <header class="s-head" data-fx="fall @-.9,-.5"><span class="s-num">01</span><span class="s-kicker">Concepto</span></header>
+      <p class="statement split" data-words="@-.5,1.0" data-fx="s:1>.86 @1.05,1.6">Un estado de <em>baja tensión</em> física y mental.</p>
+      <ul class="trio" aria-label="Sistemas que reducen su actividad" data-stagger="rise @1.0,1.55 step.14">
+        <li><span class="glyph g-musc" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><b>Muscular</b><small>el tono baja</small></li>
+        <li><span class="glyph g-resp" aria-hidden="true"><i></i></span><b>Respiratorio</b><small>el ritmo se calma</small></li>
+        <li><span class="glyph g-neuro" aria-hidden="true"><svg viewBox="0 0 80 30"><path d="M0 15 Q10 2 20 15 T40 15 T60 15 T80 15"/></svg></span><b>Neurológico</b><small>la excitación cede</small></li>
+      </ul>
+      <div class="not" data-fx="right @1.6,2.0">
+        <p>No es «no hacer nada».</p>
+        <p class="not-strong"><b>Autorregulación</b> activa.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Respiro 1 -->
+<div class="band" aria-hidden="true">
+  <p class="band-row" data-par="x:-.22"><span>Baja tensión</span><i></i><span>Autorregulación</span><i></i><span>Cuerpo y mente</span><i></i><span>Baja tensión</span></p>
+  <p class="band-row solid" data-par="x:.2"><span>Muscular</span><i></i><span>Respiratorio</span><i></i><span>Neurológico</span><i></i><span>Muscular</span></p>
+</div>
+
+<!-- 02 · DESCANSO / SUEÑO / RELAJACIÓN — centrada; tres tarjetas escalonadas convergen desde distintas profundidades -->
+<section class="slide pin s-dif" id="diferencias" data-title="Descanso, sueño y relajación" data-pin="1.7" data-stop="1.4">
+  <div class="stage">
+    <span class="numeral" aria-hidden="true" data-par="x:-.1 y:-.3">02</span>
+    <div class="wrap" data-fx="shrink @e-.1,e+.85">
+      <header class="s-head center" data-fx="fall @-.9,-.5"><span class="s-num">02</span><span class="s-kicker">Descanso · sueño · relajación</span></header>
+      <h2 class="display center" data-lines="@-.85,-.35 step.12"><span class="ln"><span>Descansar no es</span></span><span class="ln"><span><em>relajarse</em></span></span></h2>
+      <div class="flips" id="flips">
+        <button class="flip f1" aria-pressed="false" data-k="descanso" data-fx="x:-12vw>0 y:30vh>0 r:-7>0 o:0>1 @-.85,.25">
+          <span class="flip-in">
+            <span class="face front"><small>¿Qué es…?</small><strong>Descanso</strong><span class="hint">Toca para ver</span></span>
+            <span class="face back" aria-hidden="true"><small>Descanso</small><span class="def">Pausa</span><span class="aside">…y puedes seguir tenso</span></span>
+          </span>
+        </button>
+        <button class="flip f2" aria-pressed="false" data-k="sueno" data-fx="y:46vh>0 o:0>1 @-.85,.3">
+          <span class="flip-in">
+            <span class="face front"><small>¿Qué es…?</small><strong>Sueño</strong><span class="hint">Toca para ver</span></span>
+            <span class="face back" aria-hidden="true"><small>Sueño</small><span class="def">Inconsciente · restaura</span></span>
+          </span>
+        </button>
+        <button class="flip flip-key f3" aria-pressed="false" data-k="relajacion" data-fx="x:12vw>0 y:36vh>0 r:7>0 o:0>1 @-.85,.35">
+          <span class="flip-in">
+            <span class="face front"><small>¿Qué es…?</small><strong>Relajación</strong><span class="hint">Toca para ver</span></span>
+            <span class="face back" aria-hidden="true"><small>Relajación</small><span class="def"><b>Voluntaria y consciente</b></span></span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 · HISTORIA — a sangre y con scroll HORIZONTAL: el scroll vertical recorre la línea de tiempo -->
+<section class="slide pin s-hist" id="historia" data-title="Historia y evolución" data-pin="5.2">
+  <div class="stage">
+    <header class="s-head hist-head" data-fx="fall @-.9,-.5"><span class="s-num">03</span><span class="s-kicker">Historia</span></header>
+    <div class="tl" id="tl">
+      <div class="tl-view" id="tl-view" role="region" aria-label="Línea de tiempo: hitos históricos" data-fx="rise @-.9,-.3">
+        <div class="tl-track" id="tl-track" data-h="@.1,e-.25">
+          <div class="tl-intro">
+            <h2 class="display"><span class="ln"><span>De la contemplación</span></span><span class="ln"><span><em>al laboratorio</em></span></span></h2>
+            <p class="tl-hint"><span class="only-d">Baja · el tiempo avanza →</span><span class="only-m">Desliza →</span></p>
+          </div>
+        </div>
+      </div>
+      <div class="tl-foot" data-fx="rise @-.6,-.1">
+        <div class="tl-eras" aria-hidden="true"><span>Antigüedad</span><span>Grecia y Roma</span><span>Siglo XX · la formalización científica</span></div>
+        <div class="tl-rail" id="tl-rail"><i class="tl-line"></i><i class="tl-fill" id="tl-fill"></i></div>
+        <div class="tl-nav"><span id="tl-count">1 / 6</span><div><button class="btn ghost sm" type="button" id="tl-prev">Anterior</button><button class="btn ghost sm" type="button" id="tl-next">Siguiente</button></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 · FISIOLOGÍA — la ilustración sangra por la izquierda y el texto entra por la derecha -->
+<section class="slide pin s-fis" id="fisiologia" data-title="Fisiología" data-pin="1.8" data-stop="1.35">
+  <div class="stage">
+    <span class="numeral right" aria-hidden="true" data-par="x:-.1 y:-.3">04</span>
+    <div class="wrap" data-fx="shrink @e-.1,e+.85">
+      <div class="fis-top">
+        <header class="s-head" data-fx="fall @-.9,-.5"><span class="s-num">04</span><span class="s-kicker">Fisiología</span></header>
+        <h2 class="display sm" data-lines="@-.85,-.35 step.12"><span class="ln"><span>Tu cuerpo,</span></span><span class="ln"><span><em>en calma</em></span></span></h2>
+      </div>
+      <div class="phys">
+        <div class="sys-tabs" id="sys-tabs" role="tablist" aria-label="Sistemas del cuerpo" data-stagger="fall @-.75,-.35 step.05"></div>
+        <div class="phys-main">
+          <figure class="phys-viz" data-fx="x:-34vw>0 s:.88>1 o:0>1 @-.85,-.05"><canvas id="phys-canvas" aria-hidden="true"></canvas><figcaption id="phys-cap"></figcaption></figure>
+          <div class="phys-text" id="phys-panel" role="tabpanel" aria-live="polite" data-fx="right @-.7,.05">
+            <p class="state-tag" id="ph-state"></p>
+            <h3 id="ph-title"></h3>
+            <p class="kw" id="ph-kw"></p>
+            <p class="desc" id="ph-desc"></p>
+            <p class="fx" id="ph-fx"></p>
+          </div>
+        </div>
+        <div class="switch" data-fx="rise @-.5,.2">
+          <span class="sw-l"><b>Tensión</b><small>sistema simpático</small></span>
+          <input type="range" id="phys-range" min="0" max="100" value="0" aria-label="Estado del cuerpo: de tensión (simpático) a relajación (parasimpático)">
+          <span class="sw-r"><b>Relajación</b><small>sistema parasimpático</small></span>
+          <button class="btn ghost" id="phys-toggle" type="button">Alternar <kbd>T</kbd></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 · CUERPO Y MENTE — centrada, tres columnas: cuerpo · bucle · mente -->
+<section class="slide pin s-bm" id="cuerpomente" data-title="Cuerpo y mente" data-pin="1.9" data-stop="1.45">
+  <div class="stage">
+    <span class="numeral" aria-hidden="true" data-par="x:.1 y:-.3">05</span>
+    <div class="wrap" data-fx="shrink @e-.1,e+.85">
+      <header class="s-head center" data-fx="fall @-.9,-.5"><span class="s-num">05</span><span class="s-kicker">Cuerpo y mente</span></header>
+      <h2 class="display sm center" data-lines="@-.85,-.35 step.12"><span class="ln"><span>Dos puertas,</span></span><span class="ln"><span><em>un mismo bucle</em></span></span></h2>
+      <div class="bm-grid">
+        <article class="bm bm-body" data-fx="x:-22vw>0 r:-4>0 o:0>1 @-.8,.15">
+          <span class="tag tag-body">Física · somática</span>
+          <p><strong>El cuerpo</strong></p>
+          <p class="ex">Tono · contracturas · dolor</p>
+        </article>
+        <div class="loop" id="loop" data-fx="s:.6>1 o:0>1 @-.85,.2">
+          <p class="loop-h">Cuerpo ⇄ mente <small>Pruébalo</small></p>
+          <svg class="loop-svg" id="loop-svg" viewBox="0 0 400 210" role="img" aria-label="Diagrama de un bucle entre el cuerpo y la mente">
+            <path class="lp lp-a" id="lp-a" d="M120 80 C 170 20, 230 20, 280 80"/>
+            <path class="lp lp-b" id="lp-b" d="M280 130 C 230 190, 170 190, 120 130"/>
+            <circle class="node node-b" cx="90" cy="105" r="46"/>
+            <circle class="node node-m" cx="310" cy="105" r="46"/>
+            <text x="90" y="110" text-anchor="middle" class="nl">Cuerpo</text>
+            <text x="310" y="110" text-anchor="middle" class="nl">Mente</text>
+            <circle class="spark" id="sp-a" r="4.5"/><circle class="spark" id="sp-b" r="4.5"/>
+          </svg>
+          <div class="loop-ctl">
+            <button class="tg" id="lc-body" aria-pressed="true" type="button"><span>Cuerpo</span><b>Tenso</b></button>
+            <button class="tg" id="lc-mind" aria-pressed="true" type="button"><span>Mente</span><b>Con preocupaciones</b></button>
+          </div>
+          <p class="loop-msg" id="loop-msg" aria-live="polite"></p>
+        </div>
+        <article class="bm bm-mind" data-fx="x:22vw>0 r:4>0 o:0>1 @-.8,.15">
+          <span class="tag tag-mind">Mental · cognitiva y emocional</span>
+          <p><strong>La mente</strong></p>
+          <p class="ex">Rumiación · ruido · presente</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Respiro 2 -->
+<div class="band" aria-hidden="true">
+  <p class="band-row" data-par="x:.22"><span>Corporales y físicas</span><i></i><span>Mentales y cognitivas</span><i></i><span>Pasivas y sensoriales</span><i></i><span>Corporales y físicas</span></p>
+  <p class="band-row solid" data-par="x:-.2"><span>Formas</span><i></i><span>Técnicas</span><i></i><span>Herramientas</span><i></i><span>Formas</span></p>
+</div>
+
+<!-- 06 · TÉCNICAS — el detalle a la izquierda (grande) y el menú de técnicas a la derecha -->
+<section class="slide pin s-tec" id="tecnicas" data-title="Formas, técnicas y herramientas" data-pin="1.8" data-stop="1.35">
+  <div class="stage">
+    <span class="numeral right" aria-hidden="true" data-par="x:-.12 y:-.3">06</span>
+    <div class="wrap" data-fx="shrink @e-.1,e+.85">
+      <div class="tec-top">
+        <header class="s-head" data-fx="fall @-.9,-.5"><span class="s-num">06</span><span class="s-kicker">Técnicas</span></header>
+        <h2 class="display sm" data-lines="@-.85,-.35 step.12"><span class="ln"><span>Tres caminos</span></span><span class="ln"><span><em>para soltar</em></span></span></h2>
+      </div>
+      <div class="tech">
+        <div class="tech-list" id="tech-list" data-stagger="right @-.75,-.1 step.14"></div>
+        <div class="tech-detail" id="tech-detail" aria-live="polite" data-fx="x:-24vw>0 o:0>1 @-.8,.1"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 07 · RESPIRACIÓN GUIADA — centrada: el orbe es el centro y los controles lo flanquean -->
+<section class="slide pin s-resp" id="respiracion" data-title="Respiración guiada" data-pin="1.8" data-stop="1.3">
+  <div class="stage">
+    <span class="numeral" aria-hidden="true" data-par="x:.12 y:-.3">07</span>
+    <div class="wrap" data-fx="shrink @e-.1,e+.85">
+      <header class="s-head center" data-fx="fall @-.9,-.5"><span class="s-num">07</span><span class="s-kicker">Respiración</span></header>
+      <h2 class="display sm center" data-lines="@-.85,-.35 step.12"><span class="ln"><span>Respira con</span></span><span class="ln"><span>el <em>árbol</em></span></span></h2>
+      <div class="br">
+        <div class="br-side" data-fx="left @-.75,-.05">
+          <div class="seg" id="br-seg" role="radiogroup" aria-label="Patrón de respiración">
+            <button role="radio" aria-checked="true" data-p="box" type="button">Cuadrada <small>4-4-4-4</small></button>
+            <button role="radio" aria-checked="false" data-p="478" type="button">4-7-8</button>
+          </div>
+          <p class="br-desc" id="br-desc"></p>
+          <button class="btn big" id="br-start" type="button">Comenzar <kbd>B</kbd></button>
+        </div>
+        <div class="br-stage" data-fx="s:.5>1 o:0>1 @-.9,.15">
+          <svg class="br-ring" id="br-ring" viewBox="-120 -120 240 240" aria-hidden="true"></svg>
+          <div class="orb" id="br-orb" aria-hidden="true"></div>
+          <div class="br-label" aria-live="off"><span class="br-phase" id="br-phase">Listo</span><span class="br-num" id="br-num">·</span></div>
+          <p class="sr-only" id="br-sr" aria-live="polite"></p>
+        </div>
+        <div class="br-aside" data-fx="right @-.75,-.05">
+          <p class="br-hint">Al vientre, no al pecho.</p>
+          <p class="br-cyc"><b id="br-cycles">0</b> <span>ciclos completos</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 08 · ÁMBITOS — cuadrícula: cuatro ámbitos en fila y un panel ancho debajo -->
+<section class="slide pin s-amb" id="ambitos" data-title="Ámbitos" data-pin="1.5" data-stop="1.15">
+  <div class="stage">
+    <span class="numeral" aria-hidden="true" data-par="x:.1 y:-.3">08</span>
+    <div class="wrap" data-fx="shrink @e-.1,e+.85">
+      <div class="amb-top">
+        <header class="s-head" data-fx="fall @-.9,-.5"><span class="s-num">08</span><span class="s-kicker">Ámbitos</span></header>
+        <h2 class="display sm" data-lines="@-.85,-.35 step.12"><span class="ln"><span>Dónde florece</span></span><span class="ln"><span><em>la calma</em></span></span></h2>
+      </div>
+      <div class="amb">
+        <div class="amb-tabs" id="amb-tabs" role="tablist" aria-label="Ámbitos" data-stagger="fall @-.75,-.3 step.1"></div>
+        <div class="amb-panel" id="amb-panel" role="tabpanel" aria-live="polite" data-fx="rise @-.5,.1"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Respiro 3 -->
+<div class="band" aria-hidden="true">
+  <p class="band-row" data-par="x:-.22"><span>Deportivo</span><i></i><span>Laboral y escolar</span><i></i><span>Clínico y psicológico</span><i></i><span>Social y cotidiano</span></p>
+  <p class="band-row solid" data-par="x:.2"><span>Deportivo</span><i></i><span>Laboral y escolar</span><i></i><span>Clínico y psicológico</span><i></i><span>Social y cotidiano</span></p>
+</div>
+
+<!-- 09 · CIERRE — el árbol se aleja; título y pregunta a la izquierda, síntesis en cuadrícula escalonada a la derecha -->
+<section class="slide pin s-cierre" id="cierre" data-title="Cierre" data-pin="1.7" data-stop="1.3">
+  <div class="stage">
+    <span class="numeral" aria-hidden="true" data-par="x:.08 y:-.3">09</span>
+    <div class="wrap cierre-wrap">
+      <div class="cierre-l">
+        <header class="s-head" data-fx="fall @-.9,-.5"><span class="s-num">09</span><span class="s-kicker">Cierre</span></header>
+        <h2 class="display sm xl" data-lines="@-.85,-.35 step.12"><span class="ln"><span>Soltar es un</span></span><span class="ln"><span>proceso <em>activo</em></span></span></h2>
+        <div class="ask" data-fx="rise @-.2,.5">
+          <p class="ask-q"><em>¿Dónde estás tenso ahora?</em> Suelta. Respira.</p>
+          <div class="ask-btns">
+            <button class="btn" id="end-breath" type="button">Respirar juntos</button>
+            <button class="btn ghost" id="end-top" type="button">Volver al inicio</button>
+          </div>
+        </div>
+        <p class="thanks" data-fx="rise @.1,.8">Gracias. <span><b>Daniel Urrego</b> · <b>Juan Rengifo</b></span></p>
+      </div>
+      <ol class="take" data-stagger="rise @-.8,-.1 step.16">
+        <li><b>Autorregulación</b></li>
+        <li><b>Simpático → parasimpático</b></li>
+        <li><b>Cuerpo ⇄ mente</b></li>
+        <li><b>Técnicas para todos</b></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- Índice -->
+<div class="overlay" id="menu" role="dialog" aria-modal="true" aria-labelledby="menu-h" hidden>
+  <div class="ov-card">
+    <div class="ov-top"><h2 id="menu-h">Índice</h2><button class="ibtn" data-close aria-label="Cerrar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+    <ol class="menu-list" id="menu-list"></ol>
+  </div>
+</div>
+
+<!-- Ayuda -->
+<div class="overlay" id="help" role="dialog" aria-modal="true" aria-labelledby="help-h" hidden>
+  <div class="ov-card">
+    <div class="ov-top"><h2 id="help-h">Modo exposición</h2><button class="ibtn" data-close aria-label="Cerrar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+    <dl class="keys">
+      <div><dt><kbd>→</kbd> <kbd>Espacio</kbd> <kbd>Re Pág</kbd></dt><dd>Siguiente (dentro de una sección, avanza paso a paso)</dd></div>
+      <div><dt><kbd>←</kbd> <kbd>Mayús</kbd>+<kbd>Espacio</kbd> <kbd>Av Pág</kbd></dt><dd>Anterior</dd></div>
+      <div><dt><kbd>Inicio</kbd> <kbd>Fin</kbd></dt><dd>Primera / última sección</dd></div>
+      <div><dt><kbd>F</kbd></dt><dd>Pantalla completa</dd></div>
+      <div><dt><kbd>M</kbd></dt><dd>Índice de secciones</dd></div>
+      <div><dt><kbd>T</kbd></dt><dd>Fisiología: alternar tensión / relajación</dd></div>
+      <div><dt><kbd>B</kbd></dt><dd>Respiración: comenzar o detener</dd></div>
+      <div><dt><kbd>Esc</kbd></dt><dd>Cerrar paneles</dd></div>
+    </dl>
+    <p class="ov-note">También funciona con la rueda del ratón o el trackpad (las secciones se transforman al bajar; la línea de tiempo avanza en horizontal), el dedo en el móvil y los clics en los puntos de la izquierda.</p>
+  </div>
+</div>
+
+<script src="vendor/three.min.js"></script>
+<script src="js/scene.js"></script>
+<script src="js/physio.js"></script>
+<script src="js/widgets.js"></script>
+<script src="js/practice.js"></script>
+<script src="js/motion.js"></script>
+<script src="js/hoja.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
